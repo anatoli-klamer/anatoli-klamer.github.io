@@ -184,7 +184,7 @@
                    audioBoom && audioBoom.play();
                    newPlace.firstElementChild.remove();
                    newPlace.appendChild(getBoom())
-                    newPlace.cellType='boom'
+                    newPlace.cellType='boom';
                    if(elem.heroType=='red'){
                         if(boomed==='blue'){
                             elem.targetHero = hero2Elem;
@@ -192,13 +192,17 @@
                             elem.targetHero = heroElem;
                         }
                     }
+                }else{
+                    newPlace.cellType=''
                 }
 
                 return;
             }
             audioMove && audioMove.play();
             elem.remove();
-            if(elem.parentElement ) elem.parentElement.cellType = '';
+
+                elem.parentElement.cellType = '';
+
             newPlace.appendChild(elem);
             elem.i = i;
             elem.j = j;
@@ -230,8 +234,6 @@
             findTd(i,j, elem)
         }
 
-
-
         function getRandomDirection(){
             const r  = Math.random();
             if(r>0.5) return 1;
@@ -239,7 +241,7 @@
         }
 
         function listenKeyboard(){
-            document.addEventListener("keydown", function(event) {
+         document.addEventListener("keydown", function(event) {
             const key = event.keyCode;
             switch (key){
                 case 38:{
@@ -275,12 +277,13 @@
                     moveAmongUs(hero2Elem, 0, -1);
                 break;
                 }
+                default:{
+                    return;
+                    break;
+                }
             }
-            const strKey = String.fromCharCode(key);
-            console.log({strKey, key});
-                        switch (key){
 
-            }
+            event.preventDefault();
         });
         }
 
