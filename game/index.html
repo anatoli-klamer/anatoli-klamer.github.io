@@ -7,7 +7,17 @@
     <body>
         
         <div>
+        <div style="float:left; padding-right: 10vw;">
+                <table class="controlpanel" style="color:blue">
+                <tr><td></td><td onclick="processKeyButton('w')">▲</td><td></td></tr>
+                <tr><td onclick="processKeyButton('a')">◄</td><td></td><td onclick="processKeyButton('d')">►</td></tr>
+                <tr><td></td><td onclick="processKeyButton('s')">▼</td><td></td></tr>
+                    
+                </table>
+            </div>
+        <center>
             <div style="float:left" id="gamefield" style="width: 100%"></div>
+            </center>
             <div style="float:right">
                 <table class="controlpanel">
                 <tr><td></td><td onclick="processKeyButton('ArrowUp')">▲</td><td></td></tr>
@@ -25,7 +35,7 @@
         <!-- <button  id="readyToStart" onclick="readyToPutHero = !readyToPutHero">Put hero</button> */}} -->
 
         Level:
-        <input type=number id=lvl min =1 max=10 value=3></input>
+        <input type=number id=lvl min =1 max=10 value=3></input><br/>
         <button id="startGame" onclick="startLevel()">Start game</button>
         
         
