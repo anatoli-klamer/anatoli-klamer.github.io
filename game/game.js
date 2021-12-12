@@ -220,47 +220,54 @@ function listenKeyboard() {
     document.addEventListener("keydown", function (event) {
         const key = event.key;
         console.log(key);
-        switch (key) {
-            case 'ArrowUp': {
-                moveAmongUs(heroElem, -1, 0);
-                break;
-            }
-            case 'ArrowDown': {
-                moveAmongUs(heroElem, +1, 0);
-                break;
-            }
-            case 'ArrowRight': {
-                moveAmongUs(heroElem, 0, 1);
-                break;
-            }
-            case 'ArrowLeft': {
-                moveAmongUs(heroElem, 0, -1);
-                break;
-            }
-            //green
-            case 'w': {
-                moveAmongUs(hero2Elem, -1, 0);
-                break;
-            }
-            case 's': {
-                moveAmongUs(hero2Elem, +1, 0);
-                break;
-            }
-            case 'd': {
-                moveAmongUs(hero2Elem, 0, 1);
-                break;
-            }
-            case 'a': {
-                moveAmongUs(hero2Elem, 0, -1);
-                break;
-            }
-            default: {
-                return;
-                break;
-            }
-        }
+        processKeyDown(key);
 
         event.preventDefault();
     });
+}
+
+function processKeyButton(event) {
+    processKeyDown(event)
+}
+function processKeyDown(key) {
+    switch (key) {
+        case 'ArrowUp': {
+            moveAmongUs(heroElem, -1, 0);
+            break;
+        }
+        case 'ArrowDown': {
+            moveAmongUs(heroElem, +1, 0);
+            break;
+        }
+        case 'ArrowRight': {
+            moveAmongUs(heroElem, 0, 1);
+            break;
+        }
+        case 'ArrowLeft': {
+            moveAmongUs(heroElem, 0, -1);
+            break;
+        }
+        //green
+        case 'w': {
+            moveAmongUs(hero2Elem, -1, 0);
+            break;
+        }
+        case 's': {
+            moveAmongUs(hero2Elem, +1, 0);
+            break;
+        }
+        case 'd': {
+            moveAmongUs(hero2Elem, 0, 1);
+            break;
+        }
+        case 'a': {
+            moveAmongUs(hero2Elem, 0, -1);
+            break;
+        }
+        default: {
+            return;
+            break;
+        }
+    }
 }
 
